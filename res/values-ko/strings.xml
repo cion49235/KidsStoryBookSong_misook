@@ -1,6 +1,10 @@
 <resources>
 
     <string name="app_name">"들려주는 동화동요"</string>
+    <string name="permission_cancel">"본어플은 서비스 이용을 위해 [저장소접근] [네트워크변환상태]접근 권한 필요합니다 '거부'할 경우 서비스 이용에 제한이 있습니다."</string>
+    <string name="txt_finish_yes">"종료"</string>
+    <string name="txt_finish_no">"취소"</string>
+    <string name="txt_finish_ment">"종료하시겠습니까?"</string>
 	<string name="txt_nodata">컨텐츠 목록이 없습니다</string>
 	<string name="txt_favorite_nodata">즐겨찾기 목록이 없습니다</string>
     <string name="txt_main_activity1">"'즐겨찾기'항목에 추가하였습니다"</string>

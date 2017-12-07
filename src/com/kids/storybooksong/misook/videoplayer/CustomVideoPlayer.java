@@ -18,16 +18,22 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+
+import com.admixer.AdAdapter;
+import com.admixer.AdInfo;
+import com.admixer.AdMixerManager;
+import com.admixer.AdView;
+import com.admixer.AdViewListener;
+import com.admixer.InterstitialAd;
+import com.admixer.InterstitialAdListener;
+import com.kids.storybooksong.misook.R;
+import com.kids.storybooksong.misook.util.TimeUtil;
 
 import android.app.Activity;
 import android.content.Context;
@@ -59,16 +65,10 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.admixer.AdAdapter;
-import com.admixer.AdInfo;
-import com.admixer.AdMixerManager;
-import com.admixer.AdView;
-import com.admixer.AdViewListener;
-import com.admixer.InterstitialAd;
-import com.admixer.InterstitialAdListener;
-import com.kids.storybooksong.misook.R;
-import com.kids.storybooksong.misook.util.TimeUtil;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.client.ClientProtocolException;
+import cz.msebera.android.httpclient.client.methods.HttpGet;
+import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 public class CustomVideoPlayer extends Activity implements OnCompletionListener, OnPreparedListener,android.widget.SeekBar.OnSeekBarChangeListener, OnErrorListener, OnClickListener, OnTouchListener, InterstitialAdListener, AdViewListener{
 	ArrayList<String> array_videoid, array_subject, array_portal;
@@ -1272,14 +1272,14 @@ public class CustomVideoPlayer extends Activity implements OnCompletionListener,
 				Toast.makeText(context, context.getString(R.string.txt_custom_videoplayer2), Toast.LENGTH_SHORT).show();
 				return false;
 			}else{
-//				Toast.makeText(context, context.getString(R.string.txt_custom_videoplayer3), Toast.LENGTH_SHORT).show();
-//				addInterstitialView();
+				Toast.makeText(context, context.getString(R.string.txt_custom_videoplayer3), Toast.LENGTH_SHORT).show();
+				addInterstitialView();
 				 handler.postDelayed(new Runnable() {
 					 @Override
 					 public void run() {
 						 onDestroy();
 					 }
-				 },0);
+				 },3000);
 				return false;
 			}
 		}

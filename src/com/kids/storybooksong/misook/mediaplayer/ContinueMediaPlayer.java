@@ -17,13 +17,24 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+
+import com.admixer.AdAdapter;
+import com.admixer.AdInfo;
+import com.admixer.AdMixerManager;
+import com.admixer.AdView;
+import com.admixer.AdViewListener;
+import com.admixer.InterstitialAd;
+import com.admixer.InterstitialAdListener;
+import com.kids.storybooksong.misook.R;
+import com.kids.storybooksong.misook.activity.SubActivity;
+import com.kids.storybooksong.misook.util.ImageLoader;
+import com.kids.storybooksong.misook.util.TimeUtil;
 
 import android.app.Activity;
 import android.content.Context;
@@ -53,18 +64,7 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.admixer.AdAdapter;
-import com.admixer.AdInfo;
-import com.admixer.AdMixerManager;
-import com.admixer.AdView;
-import com.admixer.AdViewListener;
-import com.admixer.InterstitialAd;
-import com.admixer.InterstitialAdListener;
-import com.kids.storybooksong.misook.R;
-import com.kids.storybooksong.misook.activity.SubActivity;
-import com.kids.storybooksong.misook.util.ImageLoader;
-import com.kids.storybooksong.misook.util.TimeUtil;
+import cz.msebera.android.httpclient.client.ClientProtocolException;
 
 public class ContinueMediaPlayer extends Activity implements OnClickListener, AdViewListener, OnBufferingUpdateListener, OnCompletionListener, OnPreparedListener,android.widget.SeekBar.OnSeekBarChangeListener, OnErrorListener, InterstitialAdListener{
 	public static LinearLayout layout_progress;
