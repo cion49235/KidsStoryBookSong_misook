@@ -1245,6 +1245,8 @@ public class SubActivity extends SherlockActivity implements OnItemClickListener
 
 	@Override
 	public void onRightClicked(String arg0, InterstitialAd arg1) {
+		PreferenceUtil.setBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, true);
+		finish();
 	}
 
 	@Override
@@ -1263,7 +1265,8 @@ public class SubActivity extends SherlockActivity implements OnItemClickListener
 				 handler.postDelayed(new Runnable() {
 					 @Override
 					 public void run() {
-						 addInterstitialView_popup();
+						 PreferenceUtil.setBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, true);
+						 finish();
 					 }
 				 },0);
 			 }
